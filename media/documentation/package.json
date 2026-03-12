@@ -9,11 +9,11 @@
   "build": {
     "appId": "com.barsikcmd.docs",
     "linux": {
-        "target": "dir"
+      "target": "dir"
     }
   },
-  "devDependencies": {
-    "electron": "...",
-    "electron-builder": "..."
+  "dependencies": {
+    "electron": "^41.0.0",
+    "electron-builder": "^26.8.1"
   }
 }
