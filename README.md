@@ -3,7 +3,7 @@
     Написал: barsik0396 (создатель проги)
 -->
 
-<!-- Выпонляется подгатовка к первому релизу -->
+<!-- выполняется подготовка к первому релизу -->
 
 
 # BarsikCMD - Командная строка Барсика 😼
@@ -11,13 +11,13 @@
 > Лучше всего изменять и смотреть на проект в VS Code с расширениями [Live Preview](https://marketplace.visualstudio.com/items?itemName=ms-vscode.live-server) и [Material Icon Theme](https://marketplace.visualstudio.com/items?itemName=PKief.material-icon-theme).
 
 # Что такое BarsikCMD❓
-**BarsikCMD** это командная строка Барсика, и этот проект ***полностю open-source*** и *бесплатен*. Проект написан в основном на C++ и C.
+**BarsikCMD** это командная строка Барсика, и этот проект ***полностью open-source*** и *бесплатен*. Проект написан в основном на C++ и C.
 
 **Любой** может как-либо *изменять* BarsikCMD.
 
 # Как установить BarsikCMD ⬇️❓
 ### **BarsikCMD установить очень** ***легко***:
-1. Скачиваем **.deb**-пакет с оффициального [сайта](https://barsik0396.github.io/BarsikCMD#download) или [GitHub](https://github.com/barsik0396/BarsikCMD/releases)
+1. Скачиваем **.deb**-пакет с официального [сайта](https://barsik0396.github.io/BarsikCMD#download) или [GitHub](https://github.com/barsik0396/BarsikCMD/releases)
 2. *Проверяем* что **пакет называется** `barsik-cmd_2026.3.12.1_amd64.deb`
 3. Открываем **пакет**
 4. Жмём ***Установить пакет***
@@ -27,6 +27,9 @@
 # Последние новости 📰
 ## 2026.3.12 (15:55)
 Кажется, что уже сегодня выйдет тот самый релиз **2026.3.12.1** (в коде это 2026.3.11.1, обновить не успел)
+
+## 2026.3.12 (18:10)
+В ближайший 1 час будет опубликован BarsikCMD!
 
 # Ответы на вопросы, которые могут задавать ❓
 <details>
@@ -38,9 +41,9 @@
 <details>
 <summary>Возможно ли запустить BarsikCMD на Windows?</summary>
 
-Теоречитески - **Да, возможно**, но:
+Теоретически - **Да, возможно**, но:
 - могут быть баги
-- никакой оффициальной поддержки для Windows-версий нет
+- никакой официальной поддержки для Windows-версий нет
 - надо ставить доп. софт
 - надо знать команды для компиляции
 
@@ -55,9 +58,9 @@ BarsikCMD бесплатен потому-что:
 3. Барсик просто не хочет делать платный софт
 </details>
 <details>
-<summary>Какие оффициальные источники BarsikCMD?</summary>
+<summary>Какие официальные источники BarsikCMD?</summary>
 
-Вот все оффициальные источники BarsikCMD:
+Вот все официальные источники BarsikCMD:
 1. GitHub - [@barsik0396/BarsikCMD](https://github.com/barsik0396/BarsikCMD)
 2. Сайт на GitHub Pages - [@barsik0396/BarsikCMD](https://barsik0396.github.io/BarsikCMD)
 3. Telegram - [@barsikcmd](https://t.me/barsikcmd)
