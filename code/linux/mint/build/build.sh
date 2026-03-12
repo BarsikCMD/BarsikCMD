@@ -1,11 +1,21 @@
 #!/bin/bash
-# Usage: ./build.sh 0.1.0
+# Usage: ./build.sh [-s] <version>
 
+CUSTOM_COMPRESSION=0
+
+while getopts "s" opt; do
+  case $opt in
+    s) CUSTOM_COMPRESSION=1 ;;
+    *) echo "Usage: $0 [-s] <version>"; exit 1 ;;
+  esac
+done
+
+shift $((OPTIND - 1))
 VERSION=$1
 
 if [ -z "$VERSION" ]; then
   echo "Error: version not specified"
-  echo "Usage: $0 <version>"
+  echo "Usage: $0 [-s] <version>"
   exit 1
 fi
 
@@ -34,6 +44,17 @@ if [ ! -f "$BINARY" ]; then
 fi
 
 chmod 755 "$BINARY"
+chmod 755 "$PKG_DIR/DEBIAN"
+chmod 755 "$PKG_DIR/DEBIAN/postinst" 2>/dev/null
 
-dpkg-deb --build "$PKG_DIR"
+if [ "$CUSTOM_COMPRESSION" -eq 1 ]; then
+  echo "Compressor (gzip/xz/zstd/none):"
+  read COMPRESSOR
+  echo "Level (1-9):"
+  read LEVEL
+  dpkg-deb -Z"$COMPRESSOR" -z"$LEVEL" --build "$PKG_DIR"
+else
+  dpkg-deb --build "$PKG_DIR"
+fi
+
 echo "Done: ${PKG_DIR}.deb"
