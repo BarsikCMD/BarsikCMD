@@ -1,34 +1,228 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <title>BarsikCMD Manual</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BarsikCMD — Документация</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <h1>BarsikCMD System Documentation v1.0.0</h1>
-        <p>User: root | Host: barsik-shell | Status: Online <span class="cursor"></span></p>
-    </header>
 
-    <section>
-        <h2>[ СПИСОК КОМАНД ]</h2>
-        <table class="cmd-table">
-            <thead>
-                <tr>
-                    <th>КОМАНДА</th>
-                    <th>ОПИСАНИЕ</th>
-                    <th>ПРИМЕР</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr><td><b class="code-inline">clear</b></td><td>Очистка экрана.</td><td><code>clear</code></td></tr>
-                <tr><td><b class="code-inline">echo</b></td><td>Вывод текста.</td><td><code>echo text</code></td></tr>
-                <tr><td><b class="code-inline">exit</b></td><td>Выход из сессии.</td><td><code>exit</code></td></tr>
-                <tr><td><b class="code-inline">help</b></td><td>Справка.</td><td><code>help</code></td></tr>
-                <tr><td><b class="code-inline">ver</b></td><td>Версия системы.</td><td><code>ver</code></td></tr>
-            </tbody>
-        </table>
+<div class="layout">
+
+  <nav class="sidebar">
+    <div class="sidebar-logo">
+      <div class="logo-title">Barsik<span>CMD</span></div>
+      <div class="logo-version">docs v1.0</div>
+    </div>
+    <div class="sidebar-label">Навигация</div>
+    <div class="sidebar-section">
+      <a href="#" class="sidebar-link active" onclick="showDocs(event)">▸ Введение</a>
+      <a href="#" class="sidebar-link" onclick="showDocs(event, 'commands')">▸ Команды</a>
+    </div>
+    <div class="sidebar-label" style="margin-top:16px">Команды</div>
+    <div class="sidebar-section">
+      <a href="#" class="sidebar-link" onclick="showDocs(event, 'cmd-clear')"><span class="cmd-tag">clear</span></a>
+      <a href="#" class="sidebar-link" onclick="showDocs(event, 'cmd-echo')"><span class="cmd-tag">echo</span></a>
+      <a href="#" class="sidebar-link" onclick="showDocs(event, 'cmd-exit')"><span class="cmd-tag">exit</span></a>
+      <a href="#" class="sidebar-link" onclick="showDocs(event, 'cmd-help')"><span class="cmd-tag">help</span></a>
+      <a href="#" class="sidebar-link" onclick="showDocs(event, 'cmd-ver')"><span class="cmd-tag">ver</span></a>
+    </div>
+    <div class="sidebar-bottom">
+      <a href="#" class="sidebar-link sidebar-link-about" onclick="showAbout(event)">▸ О Программе</a>
+    </div>
+  </nav>
+
+  <!-- Docs -->
+  <main id="view-docs">
+    <section class="hero" id="intro">
+      <div class="hero-eyebrow">▸ Документация</div>
+      <h1>Barsik<span class="dim">CMD</span></h1>
+      <p class="hero-desc">Кастомная командная строка для Linux. Быстрая, минималистичная, твоя.</p>
+      <div class="terminal-demo">
+        <div class="terminal-bar">
+          <div class="dot r"></div><div class="dot y"></div><div class="dot g"></div>
+          <div class="terminal-title">barsik — ~</div>
+        </div>
+        <div class="terminal-body">
+          <div class="t-line"><span class="t-prompt">BarsikCMD&gt; </span><span class="t-cmd">ver</span></div>
+          <div class="t-line"><span class="t-out">BarsikCMD версия 2026.3.11.1</span></div>
+          <div class="t-line" style="margin-top:10px"><span class="t-prompt">BarsikCMD&gt; </span><span class="t-cmd">echo Привет, Linux!</span></div>
+          <div class="t-line"><span class="t-out">Привет, Linux!</span></div>
+          <div class="t-line" style="margin-top:10px"><span class="t-prompt">BarsikCMD&gt; </span><span class="t-cursor"></span></div>
+        </div>
+      </div>
     </section>
+
+    <section class="section" id="commands">
+      <div class="section-title">Справочник команд</div>
+
+      <div class="cmd-card" id="cmd-clear">
+        <div class="cmd-header" onclick="toggle(this)">
+          <span class="cmd-name">clear</span>
+          <span class="cmd-badge badge-builtin">builtin</span>
+          <span class="cmd-short">Очистить экран</span>
+          <span class="chevron">▾</span>
+        </div>
+        <div class="cmd-body hidden">
+          <p class="cmd-desc">Очищает содержимое терминала. Аналог системного <code>clear</code>, но встроенный прямо в BarsikCMD.</p>
+          <div class="cmd-syntax"><span class="kw">clear</span></div>
+          <div class="example-block">
+            <div class="example-label">Вывод</div>
+            <div class="example-line">
+              <span class="p">BarsikCMD&gt; </span>clear
+              <span class="out">// вывод отсутствует — экран очищается</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="cmd-card" id="cmd-echo">
+        <div class="cmd-header" onclick="toggle(this)">
+          <span class="cmd-name">echo</span>
+          <span class="cmd-badge badge-io">I/O</span>
+          <span class="cmd-short">Вывод текста</span>
+          <span class="chevron">▾</span>
+        </div>
+        <div class="cmd-body hidden">
+          <p class="cmd-desc">Выводит переданный текст в стандартный вывод. Всё, что написано после <code>echo</code>, будет напечатано как есть.</p>
+          <div class="cmd-syntax"><span class="kw">echo</span> <span class="arg">[текст]</span></div>
+          <table class="cmd-table">
+            <tr><th>Аргумент</th><th>Описание</th></tr>
+            <tr><td>[текст]</td><td>Произвольная строка для вывода. Пробелы сохраняются.</td></tr>
+          </table>
+          <div class="example-block">
+            <div class="example-label">Вывод</div>
+            <div class="example-line">
+              <span class="p">BarsikCMD&gt; </span>echo Привет, мир!
+              <span class="out">Привет, мир!</span>
+            </div>
+            <div class="example-line">
+              <span class="p">BarsikCMD&gt; </span>echo
+              <span class="out">&nbsp;</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="cmd-card" id="cmd-exit">
+        <div class="cmd-header" onclick="toggle(this)">
+          <span class="cmd-name">exit</span>
+          <span class="cmd-badge badge-system">system</span>
+          <span class="cmd-short">Завершить сессию</span>
+          <span class="chevron">▾</span>
+        </div>
+        <div class="cmd-body hidden">
+          <p class="cmd-desc">Завершает текущий сеанс BarsikCMD и закрывает приложение.</p>
+          <div class="cmd-syntax"><span class="kw">exit</span></div>
+          <div class="example-block">
+            <div class="example-label">Вывод</div>
+            <div class="example-line">
+              <span class="p">BarsikCMD&gt; </span>exit
+              <span class="out">Пока!</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="cmd-card" id="cmd-help">
+        <div class="cmd-header" onclick="toggle(this)">
+          <span class="cmd-name">help</span>
+          <span class="cmd-badge badge-info">info</span>
+          <span class="cmd-short">Список команд</span>
+          <span class="chevron">▾</span>
+        </div>
+        <div class="cmd-body hidden">
+          <p class="cmd-desc">Выводит список всех доступных команд BarsikCMD.</p>
+          <div class="cmd-syntax"><span class="kw">help</span></div>
+          <div class="example-block">
+            <div class="example-label">Вывод</div>
+            <div class="example-line">
+              <span class="p">BarsikCMD&gt; </span>help
+              <span class="out">Доступные команды:<br>&nbsp;&nbsp;clear<br>&nbsp;&nbsp;echo<br>&nbsp;&nbsp;exit<br>&nbsp;&nbsp;help<br>&nbsp;&nbsp;ver</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="cmd-card" id="cmd-ver">
+        <div class="cmd-header" onclick="toggle(this)">
+          <span class="cmd-name">ver</span>
+          <span class="cmd-badge badge-info">info</span>
+          <span class="cmd-short">Версия BarsikCMD</span>
+          <span class="chevron">▾</span>
+        </div>
+        <div class="cmd-body hidden">
+          <p class="cmd-desc">Выводит текущую версию BarsikCMD.</p>
+          <div class="cmd-syntax"><span class="kw">ver</span></div>
+          <div class="example-block">
+            <div class="example-label">Вывод</div>
+            <div class="example-line">
+              <span class="p">BarsikCMD&gt; </span>ver
+              <span class="out">BarsikCMD версия 2026.3.11.1</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </section>
+  </main>
+
+  <!-- About -->
+  <main id="view-about" class="hidden">
+    <section class="about-hero">
+      <div class="about-info">
+        <div class="hero-eyebrow">▸ О Программе</div>
+        <h1>Barsik<span class="dim">CMD</span></h1>
+        <p class="about-version">Версия 2026.3.11.1</p>
+        <p class="hero-desc">Кастомная командная строка для Linux. Быстрая, минималистичная, твоя.</p>
+        <div class="about-links">
+          <a href="https://github.com/barsik0396/BarsikCMD" class="about-link" target="_blank">
+            <span class="about-link-icon">⎋</span> GitHub проекта
+          </a>
+          <a href="https://github.com/barsik0396" class="about-link" target="_blank">
+            <span class="about-link-icon">⎋</span> GitHub разработчика
+          </a>
+          <a href="https://barsik0396.github.io/BarsikCMD" class="about-link" target="_blank">
+            <span class="about-link-icon">⎋</span> Сайт проекта
+          </a>
+        </div>
+      </div>
+      <div class="about-logo">
+        <img src="assets/logo.png" alt="BarsikCMD logo" class="logo-img">
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-title">Лицензия</div>
+      <div class="license-block">MIT License
+
+Copyright (c) 2026 barsik0396
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.</div>
+    </section>
+  </main>
+
+</div>
+
+<script src="script.js"></script>
 </body>
 </html>

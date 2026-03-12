@@ -1,18 +1,9 @@
-const { app, BrowserWindow } = require('electron');
+const { app, BrowserWindow, Menu } = require('electron')
 
-function createWindow() {
-  const win = new BrowserWindow({
-    width: 900,
-    height: 600,
-    backgroundColor: '#0a0a0a', // Чтобы не было белой вспышки при запуске
-    autoHideMenuBar: true,      // СКРЫТЬ МЕНЮ (Alt всё равно его вызовет)
-    webPreferences: {
-      nodeIntegration: true,
-      contextIsolation: false
-    }
-  });
+app.whenReady().then(() => {
+  Menu.setApplicationMenu(null)  // убирает menubar
+  const win = new BrowserWindow({ width: 1100, height: 750 })
+  win.loadFile('index.html')
+})
 
-  win.loadFile('index.html');
-}
-
-app.whenReady().then(createWindow);
+app.on('window-all-closed', () => app.quit())

@@ -1,25 +1,19 @@
 {
-  "name": "barsik-docs",
+  "name": "barsikcmd-docs",
   "version": "1.0.0",
   "main": "main.js",
   "scripts": {
     "start": "electron .",
-    "dist": "electron-builder --linux dir" 
-  },
-  "devDependencies": {
-    "electron": "^41.0.0",
-    "electron-builder": "^24.13.3"
+    "build": "electron-builder"
   },
   "build": {
-    "appId": "com.barsik.docs",
-    "productName": "BarsikDocs",
+    "appId": "com.barsikcmd.docs",
     "linux": {
-      "target": ["dir"],
-      "executableName": "barsik-docs",
-      "category": "Development"
-    },
-    "directories": {
-      "output": "dist"
+        "target": "dir"
     }
+  },
+  "devDependencies": {
+    "electron": "...",
+    "electron-builder": "..."
   }
 }
