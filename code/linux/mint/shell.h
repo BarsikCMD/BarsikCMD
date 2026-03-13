@@ -7,7 +7,7 @@
 class Shell {
 public:
     Shell();
-    void run();
+    void run(int argc, char* argv[]);
 
 private:
     std::string prompt;
