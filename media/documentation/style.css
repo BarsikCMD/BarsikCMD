@@ -505,3 +505,11 @@ main {
   box-sizing: border-box;
   overflow-x: auto;
 }
+
+/* Terminal colors */
+.t-cyan  { color: #00d4d4; }
+.t-green { color: #39ff8f; }
+.t-yellow{ color: #ffb347; }
+.t-red   { color: #ff4f4f; }
+.t-white { color: #ffffff; }
+.t-bold  { font-weight: 700; }
