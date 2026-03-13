@@ -2,15 +2,19 @@
     "cSpell.words": [
         "Барсик",
         "Барсика",
+        "кастомная",
         "скомпилить",
         "ALLUSERS",
         "APPINSTALLER",
         "barsik",
         "barsikcmd",
         "Inno",
+        "lcurl",
         "MSIX",
         "nogui",
         "NSIS",
-        "VERYSILENT"
+        "pkexec",
+        "VERYSILENT",
+        "Wextra"
     ]
 }
