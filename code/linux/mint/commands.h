@@ -10,3 +10,4 @@ void cmd_echo(const std::vector<std::string>& args);
 void cmd_clear(const std::vector<std::string>& args);
 void cmd_ver(const std::vector<std::string>& args);
 void cmd_exit(const std::vector<std::string>& args);
+void cmd_update(const std::vector<std::string>& args);
