@@ -155,6 +155,16 @@
     .install-step { grid-template-columns: 1fr; }
     .step-num { display: none; }
   }
+
+  .version-switcher { display:flex; gap:0.5rem; flex-wrap:wrap; }
+  .ver-btn {
+    font-family:'Fira Code',monospace; font-size:0.78rem;
+    padding:4px 12px; border-radius:4px; cursor:pointer;
+    border:1px solid var(--border2); background:transparent;
+    color:var(--text2); transition:all 0.15s;
+  }
+  .ver-btn:hover { border-color:var(--green); color:var(--green); }
+  .ver-btn.active { border-color:var(--green); color:var(--green); background:rgba(57,211,83,0.08); }
 </style>
 </head>
 <body>
@@ -250,7 +260,11 @@
       <div class="step-num">01</div>
       <div class="step-content">
         <h3>Скачать последний релиз</h3>
-        <a href="https://github.com/barsik0396/BarsikCMD/releases/download/2026.3.12/barsik-cmd_2026.3.12.1_amd64.deb" class="btn btn-primary" style="margin-top:0.5rem;display:inline-flex">⬇ скачать .deb</a>
+        <div class="version-switcher" style="margin-top:0.75rem">
+          <button class="ver-btn active" onclick="selectVersion(this,'2026.3.2')">2026.3.2 <span style="font-size:0.65rem;color:var(--green)">latest</span></button>
+          <button class="ver-btn" onclick="selectVersion(this,'2026.3.1')">2026.3.1</button>
+        </div>
+        <a id="deb-download-btn" href="https://github.com/barsik0396/BarsikCMD/releases/download/2026.3.2/barsik-cmd_2026.3.2_amd64.deb" class="btn btn-primary" style="margin-top:0.75rem;display:inline-flex">⬇ скачать .deb</a>
       </div>
     </div>
     <div class="install-step">
@@ -294,6 +308,18 @@
   </div>
 </footer>
 
+
+<script>
+const VERSIONS = {
+  '2026.3.2': 'https://github.com/barsik0396/BarsikCMD/releases/download/2026.3.2/barsik-cmd_2026.3.2_amd64.deb',
+  '2026.3.1': 'https://github.com/barsik0396/BarsikCMD/releases/download/2026.3.1/barsik-cmd_2026.3.12.1_amd64.deb',
+};
+function selectVersion(btn, ver) {
+  document.querySelectorAll('.ver-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  document.getElementById('deb-download-btn').href = VERSIONS[ver];
+}
+</script>
 <script src="script.js"></script>
 </body>
 </html>
