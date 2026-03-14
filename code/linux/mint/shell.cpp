@@ -33,7 +33,7 @@ void Shell::run(int argc, char* argv[]) {
         }
     }
 
-    std::cout << "\033[1m\033[33mBarsikCMD v2026.3.2\033[0m — введи 'help' для списка команд\n\n";
+    std::cout << "\033[1m\033[33mBarsikCMD v2026.3.3\033[0m — введи 'help' для списка команд\n\n";
 
     std::string input;
     while (true) {
