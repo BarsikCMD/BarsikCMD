@@ -6,6 +6,8 @@ media/documentation/node_modules/*
 media/documentation/dist/*
 # Папка ignore
 ignore
+# Все .jar (это для bfg чтобы не было проблем)
+*.jar
 # Папка со старыми файлами
 old
 # Файлы сборки
