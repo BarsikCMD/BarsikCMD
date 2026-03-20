@@ -32,8 +32,6 @@ Architecture: amd64
 Maintainer: Your Name <your@email.com>
 Description: BarsikCMD - CLI utility
 CONTROL
-else
-  sed -i "s/^Version: .*/Version: $VERSION/" "$PKG_DIR/DEBIAN/control"
 fi
 
 # Check binary exists
@@ -46,6 +44,14 @@ fi
 chmod 755 "$BINARY"
 chmod 755 "$PKG_DIR/DEBIAN"
 chmod 755 "$PKG_DIR/DEBIAN/postinst" 2>/dev/null
+
+# Calculate installed size (in KB)
+INSTALLED_SIZE=$(du -sk --exclude="$PKG_DIR/DEBIAN" "$PKG_DIR" | cut -f1)
+if grep -q "^Installed-Size:" "$PKG_DIR/DEBIAN/control"; then
+  sed -i "s/^Installed-Size: .*/Installed-Size: $INSTALLED_SIZE/" "$PKG_DIR/DEBIAN/control"
+else
+  echo "Installed-Size: $INSTALLED_SIZE" >> "$PKG_DIR/DEBIAN/control"
+fi
 
 if [ "$CUSTOM_COMPRESSION" -eq 1 ]; then
   echo "Compressor (gzip/xz/zstd/none):"
