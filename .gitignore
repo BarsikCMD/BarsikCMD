@@ -1,23 +1,18 @@
-# Файл .gitignore для BarsikCMD
-# Создал: barsik0396 (создатель BarsikCMD)
-#
-# Media-файлы
-media/documentation/node_modules/*
-media/documentation/dist/*
-# Папка ignore
-ignore
-# Все .jar (это для bfg чтобы не было проблем)
-*.jar
-# Папка с тестами версии
-test
-# Билдер в разработке - скрою
-builder
-# Папка со старыми файлами
-old
-# Файлы сборки
-code/linux/mint/build/barsik-cmd_2026.3.12.1_amd64/usr/local/bin/BarsikCMD_DOCS/*
+# BarsikCMD .gitignore
+
+# Зависимости документации
+media/documentation/node_modules/
+media/documentation/dist/
+
+# Артефакты сборки
 code/linux/mint/build/*.deb
-code/linux/mint/build/barsik-cmd_2026.3.12.1_amd64/usr/local/bin/BarsikCMD_DOCS/barsikcmd-docs
-code/linux/mint/build/barsik-cmd_2026.3.2_amd64/usr/local/bin/BarsikCMD_DOCS
-code/linux/mint/build/barsik-cmd_2026.3.3_amd64/usr/local/bin/BarsikCMD_DOCS
-code/linux/mint/build/barsik-cmd_2026.3.4_amd64/usr/local/bin/BarsikCMD_DOCS
+code/linux/mint/build/barsik-cmd_*/usr/local/bin/BarsikCMD_DOCS/
+
+# Локальные и временные папки
+ignore/
+test/
+builder/
+old/
+
+# Java-архивы (для совместимости с BFG)
+*.jar
