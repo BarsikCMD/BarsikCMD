@@ -6,6 +6,7 @@
 
 #include "commands/meow.h"
 #include "commands/update.h"
+#include "commands/file.h"
 
 void cmd_help(const std::map<std::string, std::function<void(const std::vector<std::string>&)>>& commands,
               const std::vector<std::string>& args);
