@@ -1,9 +1,9 @@
 CXX      = g++
 CXXFLAGS = -std=c++17 -Wall -Wextra
-LDFLAGS  = -lcurl
+LDFLAGS  = -lcurl -lreadline -lncursesw
 TARGET   = barsikcmd
-SRCS     = main.cpp shell.cpp commands.cpp \
-           commands/meow.cpp commands/update.cpp
+SRCS     = main.cpp shell.cpp commands.cpp input.cpp \
+           commands/meow.cpp commands/update.cpp commands/file.cpp
 
 $(TARGET): $(SRCS)
 	$(CXX) $(CXXFLAGS) -o $(TARGET) $(SRCS) $(LDFLAGS)
