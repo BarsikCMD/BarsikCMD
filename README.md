@@ -3,6 +3,7 @@
 ![License](https://img.shields.io/badge/license-MIT-green)
 ![Platform](https://img.shields.io/badge/platform-Linux-blue)
 ![Version](https://img.shields.io/badge/version-2026.3.4-orange)
+![Nightly](https://img.shields.io/badge/nightly-2026.3.5--nightly--1-purple)
 ![Status](https://img.shields.io/badge/status-active-success)
 ![Open Source](https://img.shields.io/badge/open--source-yes-brightgreen)
 
@@ -33,6 +34,21 @@
    ```
 
 Подробная инструкция по установке: [INSTALL.md](INSTALL.md)
+
+---
+
+## 📰 Последние новости
+### Планируется 2й nightly-релиз
+(Примерно выйдет ~29-31 марта)
+
+
+### Nightly-релиз 2026.3.5 (n1) вышел!
+Официально вышел Nightly-релиз 2026.3.5-nightly-1!
+Изменения:
+#### Добавлено
+Команда `file`
+#### Скачать:
+- Multi-ISO: [тут](https://barsikcmd-dev.pages.dev/downloads/BarsikCMD-Multi-ISO_2026.3.5.nightly-1.iso)
 
 ---
 
